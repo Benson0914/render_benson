@@ -4,6 +4,11 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html, Input, Output
 import plotly.express as px
 import pandas as pd
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
 
 def load_data():
     # Load and preprocess the data
@@ -204,4 +209,4 @@ def update_insurance_comparison(selected_gender):
 
 # Run the app
 if __name__ == "__main__":
-    app.run_server(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
