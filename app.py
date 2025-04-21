@@ -204,4 +204,4 @@ def update_insurance_comparison(selected_gender):
 
 # Run the app
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(host="0.0.0.0", port=10000, debug=True)
